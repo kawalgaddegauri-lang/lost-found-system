@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Item Details | Lost & Found System</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🔎 Lost<span>&</span>Found
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="lost-items.html">Lost Items</a>
+            <a href="found-items.html">Found Items</a>
+            <a href="my-items.html">My Items</a>
+        </nav>
+
+        <div class="user-menu">
+            <span class="user-icon">👤</span>
+            <span>My Account</span>
+        </div>
+
+    </header>
+
+
+    <!-- ================= BREADCRUMB ================= -->
+
+    <div class="breadcrumb">
+
+        <a href="index.html">Home</a>
+
+        <span>›</span>
+
+        <a href="lost-items.html">Lost Items</a>
+
+        <span>›</span>
+
+        <span>Item Details</span>
+
+    </div>
+
+
+    <!-- ================= ITEM DETAILS ================= -->
+
+    <main class="item-details-page">
+
+        <div class="details-container">
+
+            <!-- LEFT SIDE -->
+
+            <div class="details-image-section">
+
+                <div class="large-item-image">
+                    💻
+                </div>
+
+                <div class="image-caption">
+                    Item Image
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="details-info">
+
+                <div class="details-top">
+
+                    <span class="status lost">
+                        LOST ITEM
+                    </span>
+
+                    <span class="date">
+                        📅 Reported on 02 September 2026
+                    </span>
+
+                </div>
+
+
+                <h1>
+                    HP Laptop
+                </h1>
+
+
+                <p class="item-description">
+
+                    A black HP laptop was lost near the Central
+                    Library. The laptop has a small sticker on the
+                    back and was kept inside a black laptop bag.
+
+                </p>
+
+
+                <!-- ITEM INFORMATION -->
+
+                <div class="information-box">
+
+                    <h2>
+                        Item Information
+                    </h2>
+
+
+                    <div class="information-grid">
+
+                        <div class="info-item">
+
+                            <span class="info-label">
+                                Category
+                            </span>
+
+                            <strong>
+                                💻 Electronics
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span class="info-label">
+                                Location
+                            </span>
+
+                            <strong>
+                                📍 Central Library
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span class="info-label">
+                                Date Lost
+                            </span>
+
+                            <strong>
+                                02 September 2026
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span class="info-label">
+                                Color
+                            </span>
+
+                            <strong>
+                                Black
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span class="info-label">
+                                Brand
+                            </span>
+
+                            <strong>
+                                HP
+                            </strong>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span class="info-label">
+                                Status
+                            </span>
+
+                            <strong class="text-lost">
+                                Lost
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REPORTER INFORMATION -->
+
+                <div class="reporter-box">
+
+                    <h2>
+                        Reported By
+                    </h2>
+
+                    <div class="reporter">
+
+                        <div class="reporter-avatar">
+                            👤
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Rahul Sharma
+                            </h3>
+
+                            <p>
+                                Student • Computer Science
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTION BUTTONS -->
+
+                <div class="details-actions">
+
+                    <button
+                        class="primary-btn"
+                        onclick="contactReporter()">
+
+                        📩 Contact Reporter
+
+                    </button>
+
+                    <button
+                        class="secondary-btn"
+                        onclick="markFound()">
+
+                        ✓ I Found This Item
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= RELATED ITEMS ================= -->
+
+    <section class="related-section">
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                YOU MAY ALSO LIKE
+            </p>
+
+            <h2>
+                Similar Items
+            </h2>
+
+            <p>
+                Check other items reported around the same time.
+            </p>
+
+        </div>
+
+
+        <div class="related-items">
+
+            <!-- CARD 1 -->
+
+            <div class="related-card">
+
+                <div class="related-icon">
+                    🎒
+                </div>
+
+                <div>
+
+                    <h3>
+                        Black Backpack
+                    </h3>
+
+                    <p>
+                        📍 Central Library
+                    </p>
+
+                    <span class="status lost">
+                        LOST
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+
+            <div class="related-card">
+
+                <div class="related-icon">
+                    🎧
+                </div>
+
+                <div>
+
+                    <h3>
+                        Wireless Headphones
+                    </h3>
+
+                    <p>
+                        📍 Classroom 204
+                    </p>
+
+                    <span class="status lost">
+                        LOST
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+
+            <div class="related-card">
+
+                <div class="related-icon">
+                    🪪
+                </div>
+
+                <div>
+
+                    <h3>
+                        College ID Card
+                    </h3>
+
+                    <p>
+                        📍 College Canteen
+                    </p>
+
+                    <span class="status found">
+                        FOUND
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🔎 Lost<span>&</span>Found
+        </div>
+
+        <p>
+            © 2026 Lost & Found Management System
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function contactReporter() {
+
+            alert(
+                "Contact request sent successfully! The reporter will be notified."
+            );
+
+        }
+
+
+        function markFound() {
+
+            const confirmAction = confirm(
+                "Are you sure you found this item?"
+            );
+
+            if (confirmAction) {
+
+                alert(
+                    "Thank you! The item owner will be notified."
+                );
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

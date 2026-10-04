@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report Lost Item | Lost & Found System</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🔎 Lost<span>&</span>Found
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="lost-items.html">Lost Items</a>
+            <a href="found-items.html">Found Items</a>
+            <a href="my-items.html">My Items</a>
+            <a href="claims.html">Claims</a>
+        </nav>
+
+        <div class="user-menu">
+            <span class="user-icon">👤</span>
+            <span>My Account</span>
+        </div>
+
+    </header>
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-header">
+
+        <div>
+
+            <p class="small-title">
+                LOST ITEM
+            </p>
+
+            <h1>
+                Report a Lost Item
+            </h1>
+
+            <p>
+                Tell us about the item you lost so other students
+                can help you find it.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FORM ================= -->
+
+    <main class="form-page">
+
+        <div class="form-container">
+
+            <div class="form-heading">
+
+                <div class="form-icon">
+                    😢
+                </div>
+
+                <div>
+
+                    <h2>
+                        Lost Item Details
+                    </h2>
+
+                    <p>
+                        Please provide accurate information about
+                        your lost item.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="lostItemForm">
+
+
+                <!-- ================= ITEM NAME ================= -->
+
+                <div class="form-group">
+
+                    <label for="itemName">
+                        Item Name <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="itemName"
+                        name="itemName"
+                        placeholder="e.g. HP Laptop, College ID Card"
+                        required>
+
+                </div>
+
+
+                <!-- ================= CATEGORY ================= -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="category">
+                            Category <span>*</span>
+                        </label>
+
+                        <select
+                            id="category"
+                            name="category"
+                            required>
+
+                            <option value="">
+                                Select Category
+                            </option>
+
+                            <option value="electronics">
+                                💻 Electronics
+                            </option>
+
+                            <option value="documents">
+                                🪪 Documents
+                            </option>
+
+                            <option value="bags">
+                                🎒 Bags
+                            </option>
+
+                            <option value="accessories">
+                                🎧 Accessories
+                            </option>
+
+                            <option value="keys">
+                                🔑 Keys
+                            </option>
+
+                            <option value="clothing">
+                                👕 Clothing
+                            </option>
+
+                            <option value="books">
+                                📚 Books
+                            </option>
+
+                            <option value="others">
+                                📦 Others
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- ================= COLOR ================= -->
+
+                    <div class="form-group">
+
+                        <label for="color">
+                            Color
+                        </label>
+
+                        <input
+                            type="text"
+                            id="color"
+                            name="color"
+                            placeholder="e.g. Black">
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= BRAND ================= -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="brand">
+                            Brand
+                        </label>
+
+                        <input
+                            type="text"
+                            id="brand"
+                            name="brand"
+                            placeholder="e.g. HP, Dell, Samsung">
+
+                    </div>
+
+
+                    <!-- ================= DATE ================= -->
+
+                    <div class="form-group">
+
+                        <label for="lostDate">
+                            Date Lost <span>*</span>
+                        </label>
+
+                        <input
+                            type="date"
+                            id="lostDate"
+                            name="lostDate"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= LOCATION ================= -->
+
+                <div class="form-group">
+
+                    <label for="location">
+                        Where did you lose it? <span>*</span>
+                    </label>
+
+                    <select
+                        id="location"
+                        name="location"
+                        required>
+
+                        <option value="">
+                            Select Location
+                        </option>
+
+                        <option value="library">
+                            📚 Central Library
+                        </option>
+
+                        <option value="canteen">
+                            🍽️ College Canteen
+                        </option>
+
+                        <option value="classroom">
+                            🏫 Classroom
+                        </option>
+
+                        <option value="lab">
+                            💻 Computer Lab
+                        </option>
+
+                        <option value="parking">
+                            🅿️ Parking Area
+                        </option>
+
+                        <option value="hostel">
+                            🏠 Hostel
+                        </option>
+
+                        <option value="sports">
+                            ⚽ Sports Ground
+                        </option>
+
+                        <option value="other">
+                            📍 Other Location
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ================= DESCRIPTION ================= -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description <span>*</span>
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="5"
+                        placeholder="Describe your item, including unique marks, stickers, scratches, model, or other identifying details..."
+                        required></textarea>
+
+                    <small>
+                        Add details that can help identify your item.
+                    </small>
+
+                </div>
+
+
+                <!-- ================= IDENTIFICATION ================= -->
+
+                <div class="form-group">
+
+                    <label for="identification">
+                        Identifying Information
+                    </label>
+
+                    <input
+                        type="text"
+                        id="identification"
+                        name="identification"
+                        placeholder="e.g. Sticker on back, initials, unique cover">
+
+                </div>
+
+
+                <!-- ================= IMAGE ================= -->
+
+                <div class="form-group">
+
+                    <label for="itemImage">
+                        Item Image
+                    </label>
+
+                    <div class="upload-box">
+
+                        <div class="upload-icon">
+                            📷
+                        </div>
+
+                        <p>
+                            Upload an image of your item
+                        </p>
+
+                        <small>
+                            JPG, PNG or JPEG
+                        </small>
+
+                        <input
+                            type="file"
+                            id="itemImage"
+                            name="itemImage"
+                            accept="image/png, image/jpeg, image/jpg">
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= CONTACT ================= -->
+
+                <div class="form-section-title">
+
+                    <h3>
+                        Contact Information
+                    </h3>
+
+                    <p>
+                        This information will help others contact you.
+                    </p>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="contactName">
+                            Your Name <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="contactName"
+                            name="contactName"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="contactEmail">
+                            Email <span>*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            name="contactEmail"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= TERMS ================= -->
+
+                <div class="form-checkbox">
+
+                    <input
+                        type="checkbox"
+                        id="confirmInfo"
+                        required>
+
+                    <label for="confirmInfo">
+
+                        I confirm that the information provided above
+                        is accurate.
+
+                    </label>
+
+                </div>
+
+
+                <!-- ================= BUTTONS ================= -->
+
+                <div class="form-actions">
+
+                    <a
+                        href="dashboard.html"
+                        class="secondary-btn">
+
+                        Cancel
+
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="primary-btn">
+
+                        🚨 Submit Lost Report
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🔎 Lost<span>&</span>Found
+        </div>
+
+        <p>
+            © 2026 Lost & Found Management System
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        document
+            .getElementById("lostItemForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const itemName =
+                    document.getElementById("itemName").value;
+
+                alert(
+                    "Lost item report submitted successfully for: "
+                    + itemName
+                );
+
+                this.reset();
+
+            });
+
+    </script>
+
+</body>
+
+</html>

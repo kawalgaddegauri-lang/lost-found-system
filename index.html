@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lost & Found System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            🔎 Lost<span>&</span>Found
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#lost">Lost Items</a>
+            <a href="#found">Found Items</a>
+            <a href="#report">Report</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="login-btn" onclick="openLogin()">
+            Login
+        </button>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🎓 Campus Lost & Found
+            </div>
+
+            <h1>
+                Lost Something?
+                <span>Let's Find It.</span>
+            </h1>
+
+            <p>
+                A simple platform for students to report lost items,
+                find belongings and connect with the person who found them.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="primary-btn" onclick="scrollToReport()">
+                    Report Lost Item
+                </button>
+
+                <button class="secondary-btn" onclick="scrollToItems()">
+                    Find an Item
+                </button>
+            </div>
+
+        </div>
+
+        <div class="hero-card">
+
+            <div class="search-icon">
+                🔍
+            </div>
+
+            <h3>Find your belongings</h3>
+
+            <p>
+                Search through recently reported lost and found items.
+            </p>
+
+            <div class="mini-search">
+                <input
+                    type="text"
+                    id="heroSearch"
+                    placeholder="Search item..."
+                >
+
+                <button onclick="searchItems()">
+                    Search
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+    <section class="stats">
+
+        <div class="stat-card">
+            <div class="stat-icon">📦</div>
+            <h2 id="lostCount">24</h2>
+            <p>Lost Items</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">✅</div>
+            <h2 id="foundCount">18</h2>
+            <p>Found Items</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">🤝</div>
+            <h2>12</h2>
+            <p>Items Returned</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">👨‍🎓</div>
+            <h2>250+</h2>
+            <p>Students</p>
+        </div>
+
+    </section>
+
+
+    <!-- ITEMS SECTION -->
+    <section class="items-section" id="lost">
+
+        <div class="section-heading">
+            <div>
+                <p class="small-title">RECENT REPORTS</p>
+
+                <h2>
+                    Lost & Found Items
+                </h2>
+            </div>
+
+            <button class="view-btn" onclick="showAllItems()">
+                View All →
+            </button>
+        </div>
+
+
+        <!-- SEARCH -->
+        <div class="filter-bar">
+
+            <input
+                type="text"
+                id="itemSearch"
+                placeholder="🔍 Search items..."
+                onkeyup="filterItems()"
+            >
+
+            <select id="categoryFilter" onchange="filterItems()">
+                <option value="all">All Categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="documents">Documents</option>
+                <option value="accessories">Accessories</option>
+                <option value="others">Others</option>
+            </select>
+
+        </div>
+
+
+        <!-- ITEM CARDS -->
+        <div class="items-grid" id="itemsGrid">
+
+            <div class="item-card" data-category="electronics">
+
+                <div class="item-image blue">
+                    💻
+                </div>
+
+                <div class="item-info">
+
+                    <span class="status lost">
+                        LOST
+                    </span>
+
+                    <h3>HP Laptop</h3>
+
+                    <p>💻 Electronics</p>
+
+                    <p>📍 Library</p>
+
+                    <small>
+                        Reported 2 hours ago
+                    </small>
+
+                </div>
+
+                <button onclick="viewItem('HP Laptop')">
+                    View
+                </button>
+
+            </div>
+
+
+            <div class="item-card" data-category="documents">
+
+                <div class="item-image purple">
+                    📕
+                </div>
+
+                <div class="item-info">
+
+                    <span class="status found">
+                        FOUND
+                    </span>
+
+                    <h3>College ID Card</h3>
+
+                    <p>🪪 Documents</p>
+
+                    <p>📍 Canteen</p>
+
+                    <small>
+                        Reported 5 hours ago
+                    </small>
+
+                </div>
+
+                <button onclick="viewItem('College ID Card')">
+                    View
+                </button>
+
+            </div>
+
+
+            <div class="item-card" data-category="accessories">
+
+                <div class="item-image pink">
+                    🎧
+                </div>
+
+                <div class="item-info">
+
+                    <span class="status lost">
+                        LOST
+                    </span>
+
+                    <h3>Wireless Headphones</h3>
+
+                    <p>🎧 Accessories</p>
+
+                    <p>📍 Classroom 204</p>
+
+                    <small>
+                        Reported yesterday
+                    </small>
+
+                </div>
+
+                <button onclick="viewItem('Wireless Headphones')">
+                    View
+                </button>
+
+            </div>
+
+
+            <div class="item-card" data-category="others">
+
+                <div class="item-image green">
+                    🔑
+                </div>
+
+                <div class="item-info">
+
+                    <span class="status found">
+                        FOUND
+                    </span>
+
+                    <h3>Key Chain</h3>
+
+                    <p>🔑 Others</p>
+
+                    <p>📍 Parking Area</p>
+
+                    <small>
+                        Reported yesterday
+                    </small>
+
+                </div>
+
+                <button onclick="viewItem('Key Chain')">
+                    View
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REPORT SECTION -->
+    <section class="report-section" id="report">
+
+        <div class="report-container">
+
+            <div class="report-text">
+
+                <p class="small-title">
+                    HELP THE COMMUNITY
+                </p>
+
+                <h2>
+                    Lost or Found Something?
+                </h2>
+
+                <p>
+                    Report it here and help reunite belongings
+                    with their rightful owners.
+                </p>
+
+            </div>
+
+
+            <div class="report-buttons">
+
+                <button
+                    class="lost-report"
+                    onclick="openReport('Lost')"
+                >
+                    😢 Report Lost Item
+                </button>
+
+                <button
+                    class="found-report"
+                    onclick="openReport('Found')"
+                >
+                    😊 Report Found Item
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+
+        <p class="small-title">
+            ABOUT THE SYSTEM
+        </p>
+
+        <h2>
+            Making Lost & Found Simple
+        </h2>
+
+        <p>
+            Our Lost & Found Management System helps students
+            report missing belongings and discover items found
+            around campus.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            🔎 Lost<span>&</span>Found
+        </div>
+
+        <p>
+            © 2026 Lost & Found Management System
+        </p>
+
+    </footer>
+
+
+    <!-- REPORT MODAL -->
+    <div class="modal" id="reportModal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeModal('reportModal')">
+                &times;
+            </span>
+
+            <h2 id="modalTitle">
+                Report Item
+            </h2>
+
+            <form onsubmit="submitReport(event)">
+
+                <label>Item Name</label>
+                <input
+                    type="text"
+                    id="reportItem"
+                    placeholder="Enter item name"
+                    required
+                >
+
+                <label>Category</label>
+
+                <select id="reportCategory" required>
+                    <option value="">Select category</option>
+                    <option>Electronics</option>
+                    <option>Documents</option>
+                    <option>Accessories</option>
+                    <option>Others</option>
+                </select>
+
+                <label>Location</label>
+
+                <input
+                    type="text"
+                    id="reportLocation"
+                    placeholder="Where was it lost/found?"
+                    required
+                >
+
+                <label>Description</label>
+
+                <textarea
+                    id="reportDescription"
+                    placeholder="Describe the item..."
+                ></textarea>
+
+                <button type="submit" class="submit-btn">
+                    Submit Report
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- LOGIN MODAL -->
+    <div class="modal" id="loginModal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeModal('loginModal')">
+                &times;
+            </span>
+
+            <h2>Welcome Back 👋</h2>
+
+            <form onsubmit="login(event)">
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    placeholder="Enter password"
+                    required
+                >
+
+                <button class="submit-btn">
+                    Login
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

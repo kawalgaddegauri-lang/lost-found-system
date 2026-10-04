@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search Items | Lost & Found System</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🔎 Lost<span>&</span>Found
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="lost-items.html">Lost Items</a>
+            <a href="found-items.html">Found Items</a>
+            <a href="my-items.html">My Items</a>
+            <a href="claims.html">Claims</a>
+        </nav>
+
+        <div class="user-menu">
+            <span class="user-icon">👤</span>
+            <span>My Account</span>
+        </div>
+
+    </header>
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-header">
+
+        <div>
+
+            <p class="small-title">
+                FIND YOUR ITEM
+            </p>
+
+            <h1>
+                Search Lost & Found Items
+            </h1>
+
+            <p>
+                Search through items reported by students across campus.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SEARCH AREA ================= -->
+
+    <main class="search-page">
+
+        <section class="search-box-section">
+
+            <div class="main-search">
+
+                <span class="search-icon">
+                    🔍
+                </span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search for an item... e.g. laptop, ID card, keys"
+                    onkeyup="searchItems()">
+
+                <button
+                    class="primary-btn"
+                    onclick="searchItems()">
+
+                    Search
+
+                </button>
+
+            </div>
+
+
+            <!-- ================= FILTERS ================= -->
+
+            <div class="search-filters">
+
+                <div class="filter-group">
+
+                    <label for="statusFilter">
+                        Status
+                    </label>
+
+                    <select id="statusFilter"
+                        onchange="searchItems()">
+
+                        <option value="all">
+                            All Items
+                        </option>
+
+                        <option value="lost">
+                            Lost Items
+                        </option>
+
+                        <option value="found">
+                            Found Items
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <label for="categoryFilter">
+                        Category
+                    </label>
+
+                    <select id="categoryFilter"
+                        onchange="searchItems()">
+
+                        <option value="all">
+                            All Categories
+                        </option>
+
+                        <option value="electronics">
+                            Electronics
+                        </option>
+
+                        <option value="documents">
+                            Documents
+                        </option>
+
+                        <option value="bags">
+                            Bags
+                        </option>
+
+                        <option value="accessories">
+                            Accessories
+                        </option>
+
+                        <option value="keys">
+                            Keys
+                        </option>
+
+                        <option value="books">
+                            Books
+                        </option>
+
+                        <option value="others">
+                            Others
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="filter-group">
+
+                    <label for="locationFilter">
+                        Location
+                    </label>
+
+                    <select id="locationFilter"
+                        onchange="searchItems()">
+
+                        <option value="all">
+                            All Locations
+                        </option>
+
+                        <option value="library">
+                            Central Library
+                        </option>
+
+                        <option value="canteen">
+                            College Canteen
+                        </option>
+
+                        <option value="classroom">
+                            Classroom
+                        </option>
+
+                        <option value="lab">
+                            Computer Lab
+                        </option>
+
+                        <option value="parking">
+                            Parking Area
+                        </option>
+
+                        <option value="hostel">
+                            Hostel
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    class="clear-filter"
+                    onclick="clearFilters()">
+
+                    Clear Filters
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RESULTS HEADER ================= -->
+
+        <section class="results-section">
+
+            <div class="results-header">
+
+                <div>
+
+                    <p class="small-title">
+                        SEARCH RESULTS
+                    </p>
+
+                    <h2>
+                        Reported Items
+                    </h2>
+
+                    <p id="resultCount">
+                        Showing all reported items
+                    </p>
+
+                </div>
+
+                <select
+                    id="sortFilter"
+                    onchange="sortItems()">
+
+                    <option value="latest">
+                        Latest First
+                    </option>
+
+                    <option value="oldest">
+                        Oldest First
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ================= RESULTS ================= -->
+
+            <div class="search-results" id="searchResults">
+
+
+                <!-- ITEM 1 -->
+
+                <div class="search-item-card"
+                    data-name="hp laptop"
+                    data-status="lost"
+                    data-category="electronics"
+                    data-location="library">
+
+                    <div class="search-item-icon blue">
+                        💻
+                    </div>
+
+                    <div class="search-item-info">
+
+                        <div class="item-title-row">
+
+                            <h3>
+                                HP Laptop
+                            </h3>
+
+                            <span class="status lost">
+                                LOST
+                            </span>
+
+                        </div>
+
+                        <p>
+                            💻 Electronics
+                        </p>
+
+                        <p>
+                            📍 Central Library
+                        </p>
+
+                        <p>
+                            📅 02 September 2026
+                        </p>
+
+                        <p class="item-description">
+                            Black HP laptop with a sticker on the back.
+                        </p>
+
+                    </div>
+
+                    <div class="search-item-action">
+
+                        <a
+                            href="items-details.html"
+                            class="view-action">
+
+                            View Details
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ITEM 2 -->
+
+                <div class="search-item-card"
+                    data-name="college id card"
+                    data-status="found"
+                    data-category="documents"
+                    data-location="canteen">
+
+                    <div class="search-item-icon purple">
+                        🪪
+                    </div>
+
+                    <div class="search-item-info">
+
+                        <div class="item-title-row">
+
+                            <h3>
+                                College ID Card
+                            </h3>
+
+                            <span class="status found">
+                                FOUND
+                            </span>
+
+                        </div>
+
+                        <p>
+                            🪪 Documents
+                        </p>
+
+                        <p>
+                            📍 College Canteen
+                        </p>
+
+                        <p>
+                            📅 01 September 2026
+                        </p>
+
+                        <p class="item-description">
+                            Student ID card found near the canteen.
+                        </p>
+
+                    </div>
+
+                    <div class="search-item-action">
+
+                        <a
+                            href="items-details.html"
+                            class="view-action">
+
+                            View Details
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ITEM 3 -->
+
+                <div class="search-item-card"
+                    data-name="wireless headphones"
+                    data-status="lost"
+                    data-category="accessories"
+                    data-location="classroom">
+
+                    <div class="search-item-icon pink">
+                        🎧
+                    </div>
+
+                    <div class="search-item-info">
+
+                        <div class="item-title-row">
+
+                            <h3>
+                                Wireless Headphones
+                            </h3>
+
+                            <span class="status lost">
+                                LOST
+                            </span>
+
+                        </div>
+
+                        <p>
+                            🎧 Accessories
+                        </p>
+
+                        <p>
+                            📍 Classroom 204
+                        </p>
+
+                        <p>
+                            📅 30 August 2026
+                        </p>
+
+                        <p class="item-description">
+                            Black wireless headphones with a charging case.
+                        </p>
+
+                    </div>
+
+                    <div class="search-item-action">
+
+                        <a
+                            href="items-details.html"
+                            class="view-action">
+
+                            View Details
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ITEM 4 -->
+
+                <div class="search-item-card"
+                    data-name="bike keys"
+                    data-status="found"
+                    data-category="keys"
+                    data-location="parking">
+
+                    <div class="search-item-icon green">
+                        🔑
+                    </div>
+
+                    <div class="search-item-info">
+
+                        <div class="item-title-row">
+
+                            <h3>
+                                Bike Keys
+                            </h3>
+
+                            <span class="status found">
+                                FOUND
+                            </span>
+
+                        </div>
+
+                        <p>
+                            🔑 Keys
+                        </p>
+
+                        <p>
+                            📍 Parking Area
+                        </p>
+
+                        <p>
+                            📅 28 August 2026
+                        </p>
+
+                        <p class="item-description">
+                            A set of two bike keys found near parking.
+                        </p>
+
+                    </div>
+
+                    <div class="search-item-action">
+
+                        <a
+                            href="items-details.html"
+                            class="view-action">
+
+                            View Details
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ITEM 5 -->
+
+                <div class="search-item-card"
+                    data-name="black backpack"
+                    data-status="lost"
+                    data-category="bags"
+                    data-location="library">
+
+                    <div class="search-item-icon orange">
+                        🎒
+                    </div>
+
+                    <div class="search-item-info">
+
+                        <div class="item-title-row">
+
+                            <h3>
+                                Black Backpack
+                            </h3>
+
+                            <span class="status lost">
+                                LOST
+                            </span>
+
+                        </div>
+
+                        <p>
+                            🎒 Bags
+                        </p>
+
+                        <p>
+                            📍 Central Library
+                        </p>
+
+                        <p>
+                            📅 27 August 2026
+                        </p>
+
+                        <p class="item-description">
+                            Black backpack containing notebooks and books.
+                        </p>
+
+                    </div>
+
+                    <div class="search-item-action">
+
+                        <a
+                            href="items-details.html"
+                            class="view-action">
+
+                            View Details
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= EMPTY STATE ================= -->
+
+            <div
+                class="empty-state"
+                id="searchEmptyState"
+                style="display: none;">
+
+                <div>
+                    🔍
+                </div>
+
+                <h3>
+                    No Items Found
+                </h3>
+
+                <p>
+                    Try changing your search or filters.
+                </p>
+
+                <button
+                    class="primary-btn"
+                    onclick="clearFilters()">
+
+                    Clear Search
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🔎 Lost<span>&</span>Found
+        </div>
+
+        <p>
+            © 2026 Lost & Found Management System
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function searchItems() {
+
+            const searchText =
+                document.getElementById("searchInput")
+                    .value
+                    .toLowerCase()
+                    .trim();
+
+            const status =
+                document.getElementById("statusFilter").value;
+
+            const category =
+                document.getElementById("categoryFilter").value;
+
+            const location =
+                document.getElementById("locationFilter").value;
+
+            const items =
+                document.querySelectorAll(".search-item-card");
+
+            const emptyState =
+                document.getElementById("searchEmptyState");
+
+            const resultCount =
+                document.getElementById("resultCount");
+
+            let visibleCount = 0;
+
+
+            items.forEach(function(item) {
+
+                const name =
+                    item.dataset.name;
+
+                const itemStatus =
+                    item.dataset.status;
+
+                const itemCategory =
+                    item.dataset.category;
+
+                const itemLocation =
+                    item.dataset.location;
+
+
+                const matchesSearch =
+                    name.includes(searchText);
+
+                const matchesStatus =
+                    status === "all" ||
+                    itemStatus === status;
+
+                const matchesCategory =
+                    category === "all" ||
+                    itemCategory === category;
+
+                const matchesLocation =
+                    location === "all" ||
+                    itemLocation === location;
+
+
+                if (
+                    matchesSearch &&
+                    matchesStatus &&
+                    matchesCategory &&
+                    matchesLocation
+                ) {
+
+                    item.style.display = "flex";
+                    visibleCount++;
+
+                } else {
+
+                    item.style.display = "none";
+
+                }
+
+            });
+
+
+            resultCount.textContent =
+                visibleCount +
+                " item(s) found";
+
+
+            if (visibleCount === 0) {
+
+                emptyState.style.display = "block";
+
+            } else {
+
+                emptyState.style.display = "none";
+
+            }
+
+        }
+
+
+        function clearFilters() {
+
+            document.getElementById("searchInput").value = "";
+
+            document.getElementById("statusFilter").value = "all";
+
+            document.getElementById("categoryFilter").value = "all";
+
+            document.getElementById("locationFilter").value = "all";
+
+            searchItems();
+
+        }
+
+
+        function sortItems() {
+
+            const container =
+                document.getElementById("searchResults");
+
+            const items =
+                Array.from(
+                    container.querySelectorAll(".search-item-card")
+                );
+
+            const sortValue =
+                document.getElementById("sortFilter").value;
+
+
+            items.reverse().forEach(function(item) {
+
+                container.appendChild(item);
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Claims | Lost & Found System</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🔎 Lost<span>&</span>Found
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="lost-items.html">Lost Items</a>
+            <a href="found-items.html">Found Items</a>
+            <a href="my-items.html">My Items</a>
+            <a href="claims.html" class="active">Claims</a>
+        </nav>
+
+        <div class="user-menu">
+            <span class="user-icon">👤</span>
+            <span>My Account</span>
+        </div>
+
+    </header>
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-header">
+
+        <div>
+
+            <p class="small-title">
+                CLAIM MANAGEMENT
+            </p>
+
+            <h1>
+                My Claims
+            </h1>
+
+            <p>
+                Track the claims you have submitted for found items.
+            </p>
+
+        </div>
+
+        <a href="found-items.html" class="primary-btn">
+            🔍 Find an Item
+        </a>
+
+    </section>
+
+
+    <!-- ================= CLAIM SUMMARY ================= -->
+
+    <section class="summary-section">
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                📋
+            </div>
+
+            <div>
+                <h2>4</h2>
+                <p>Total Claims</p>
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                ⏳
+            </div>
+
+            <div>
+                <h2>2</h2>
+                <p>Pending</p>
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon found-icon">
+                ✓
+            </div>
+
+            <div>
+                <h2>1</h2>
+                <p>Approved</p>
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon lost-icon">
+                ✕
+            </div>
+
+            <div>
+                <h2>1</h2>
+                <p>Rejected</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CLAIMS CONTENT ================= -->
+
+    <main class="dashboard-content">
+
+        <div class="content-heading">
+
+            <div>
+
+                <p class="small-title">
+                    YOUR CLAIMS
+                </p>
+
+                <h2>
+                    Submitted Claims
+                </h2>
+
+                <p>
+                    View the status of all your item claims.
+                </p>
+
+            </div>
+
+
+            <div class="item-filter">
+
+                <select id="claimFilter"
+                    onchange="filterClaims()">
+
+                    <option value="all">
+                        All Claims
+                    </option>
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                    <option value="approved">
+                        Approved
+                    </option>
+
+                    <option value="rejected">
+                        Rejected
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= CLAIMS LIST ================= -->
+
+        <div class="claims-list" id="claimsList">
+
+
+            <!-- CLAIM 1 -->
+
+            <div class="claim-card"
+                data-status="pending">
+
+                <div class="claim-item-icon blue">
+                    💻
+                </div>
+
+
+                <div class="claim-details">
+
+                    <div class="item-title-row">
+
+                        <h3>
+                            HP Laptop
+                        </h3>
+
+                        <span class="claim-status pending">
+                            PENDING
+                        </span>
+
+                    </div>
+
+                    <p>
+                        📍 Central Library
+                    </p>
+
+                    <p>
+                        📅 Claim submitted: 02 September 2026
+                    </p>
+
+                    <p>
+                        🔎 Claim ID: CLM-1001
+                    </p>
+
+                </div>
+
+
+                <div class="claim-actions">
+
+                    <button
+                        class="view-action"
+                        onclick="viewClaim('HP Laptop')">
+
+                        View Claim
+
+                    </button>
+
+                    <button
+                        class="delete-action"
+                        onclick="cancelClaim(this)">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLAIM 2 -->
+
+            <div class="claim-card"
+                data-status="approved">
+
+                <div class="claim-item-icon purple">
+                    🪪
+                </div>
+
+
+                <div class="claim-details">
+
+                    <div class="item-title-row">
+
+                        <h3>
+                            College ID Card
+                        </h3>
+
+                        <span class="claim-status approved">
+                            APPROVED
+                        </span>
+
+                    </div>
+
+                    <p>
+                        📍 College Canteen
+                    </p>
+
+                    <p>
+                        📅 Claim submitted: 01 September 2026
+                    </p>
+
+                    <p>
+                        🔎 Claim ID: CLM-1002
+                    </p>
+
+                </div>
+
+
+                <div class="claim-actions">
+
+                    <button
+                        class="view-action"
+                        onclick="viewClaim('College ID Card')">
+
+                        View Claim
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLAIM 3 -->
+
+            <div class="claim-card"
+                data-status="pending">
+
+                <div class="claim-item-icon pink">
+                    🎧
+                </div>
+
+
+                <div class="claim-details">
+
+                    <div class="item-title-row">
+
+                        <h3>
+                            Wireless Headphones
+                        </h3>
+
+                        <span class="claim-status pending">
+                            PENDING
+                        </span>
+
+                    </div>
+
+                    <p>
+                        📍 Classroom 204
+                    </p>
+
+                    <p>
+                        📅 Claim submitted: 31 August 2026
+                    </p>
+
+                    <p>
+                        🔎 Claim ID: CLM-1003
+                    </p>
+
+                </div>
+
+
+                <div class="claim-actions">
+
+                    <button
+                        class="view-action"
+                        onclick="viewClaim('Wireless Headphones')">
+
+                        View Claim
+
+                    </button>
+
+                    <button
+                        class="delete-action"
+                        onclick="cancelClaim(this)">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLAIM 4 -->
+
+            <div class="claim-card"
+                data-status="rejected">
+
+                <div class="claim-item-icon green">
+                    🎒
+                </div>
+
+
+                <div class="claim-details">
+
+                    <div class="item-title-row">
+
+                        <h3>
+                            Black Backpack
+                        </h3>
+
+                        <span class="claim-status rejected">
+                            REJECTED
+                        </span>
+
+                    </div>
+
+                    <p>
+                        📍 Student Parking Area
+                    </p>
+
+                    <p>
+                        📅 Claim submitted: 29 August 2026
+                    </p>
+
+                    <p>
+                        🔎 Claim ID: CLM-1004
+                    </p>
+
+                </div>
+
+
+                <div class="claim-actions">
+
+                    <button
+                        class="view-action"
+                        onclick="viewClaim('Black Backpack')">
+
+                        View Claim
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= EMPTY STATE ================= -->
+
+        <div class="empty-state"
+            id="claimsEmptyState"
+            style="display: none;">
+
+            <div>
+                📋
+            </div>
+
+            <h3>
+                No Claims Found
+            </h3>
+
+            <p>
+                You don't have any claims in this category.
+            </p>
+
+            <a href="found-items.html"
+                class="primary-btn">
+
+                Browse Found Items
+
+            </a>
+
+        </div>
+
+
+        <!-- ================= CLAIM INFO ================= -->
+
+        <section class="info-banner">
+
+            <div class="help-icon">
+                💡
+            </div>
+
+            <div>
+
+                <h3>
+                    How does claiming work?
+                </h3>
+
+                <p>
+                    Find an item that belongs to you, submit a claim
+                    with identifying details, and wait for the
+                    reporter or administrator to verify your claim.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🔎 Lost<span>&</span>Found
+        </div>
+
+        <p>
+            © 2026 Lost & Found Management System
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function filterClaims() {
+
+            const filter =
+                document.getElementById("claimFilter").value;
+
+            const claims =
+                document.querySelectorAll(".claim-card");
+
+            const emptyState =
+                document.getElementById("claimsEmptyState");
+
+            let visibleCount = 0;
+
+
+            claims.forEach(function (claim) {
+
+                const status =
+                    claim.getAttribute("data-status");
+
+                if (filter === "all" || status === filter) {
+
+                    claim.style.display = "flex";
+                    visibleCount++;
+
+                } else {
+
+                    claim.style.display = "none";
+
+                }
+
+            });
+
+
+            if (visibleCount === 0) {
+
+                emptyState.style.display = "block";
+
+            } else {
+
+                emptyState.style.display = "none";
+
+            }
+
+        }
+
+
+        function viewClaim(itemName) {
+
+            alert(
+                "Opening claim details for: " + itemName
+            );
+
+        }
+
+
+        function cancelClaim(button) {
+
+            const confirmation = confirm(
+                "Are you sure you want to cancel this claim?"
+            );
+
+            if (confirmation) {
+
+                const claimCard =
+                    button.closest(".claim-card");
+
+                claimCard.remove();
+
+                alert(
+                    "Your claim has been cancelled."
+                );
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

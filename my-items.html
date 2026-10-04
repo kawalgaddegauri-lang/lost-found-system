@@ -1,0 +1,502 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Items | Lost & Found System</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🔎 Lost<span>&</span>Found
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="lost-items.html">Lost Items</a>
+            <a href="found-items.html">Found Items</a>
+            <a href="my-items.html" class="active">My Items</a>
+        </nav>
+
+        <div class="user-menu">
+            <span class="user-icon">👤</span>
+            <span>My Account</span>
+        </div>
+
+    </header>
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-header">
+
+        <div>
+
+            <p class="small-title">
+                MY ACTIVITY
+            </p>
+
+            <h1>
+                My Items
+            </h1>
+
+            <p>
+                Manage all the lost and found items you have reported.
+            </p>
+
+        </div>
+
+        <a href="report.html" class="primary-btn">
+            + Report New Item
+        </a>
+
+    </section>
+
+
+    <!-- ================= SUMMARY CARDS ================= -->
+
+    <section class="summary-section">
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                📦
+            </div>
+
+            <div>
+                <h2>4</h2>
+                <p>Total Reports</p>
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon lost-icon">
+                😢
+            </div>
+
+            <div>
+                <h2>2</h2>
+                <p>Lost Items</p>
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon found-icon">
+                😊
+            </div>
+
+            <div>
+                <h2>2</h2>
+                <p>Found Items</p>
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon returned-icon">
+                🤝
+            </div>
+
+            <div>
+                <h2>1</h2>
+                <p>Returned</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ITEMS SECTION ================= -->
+
+    <main class="dashboard-content">
+
+        <div class="content-heading">
+
+            <div>
+
+                <h2>
+                    Your Reported Items
+                </h2>
+
+                <p>
+                    Items reported by you
+                </p>
+
+            </div>
+
+
+            <div class="item-filter">
+
+                <select id="statusFilter"
+                    onchange="filterMyItems()">
+
+                    <option value="all">
+                        All Items
+                    </option>
+
+                    <option value="lost">
+                        Lost
+                    </option>
+
+                    <option value="found">
+                        Found
+                    </option>
+
+                    <option value="returned">
+                        Returned
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= ITEMS LIST ================= -->
+
+        <div class="my-items-list" id="myItemsList">
+
+
+            <!-- ITEM 1 -->
+
+            <div class="my-item-card"
+                data-status="lost">
+
+                <div class="item-icon blue">
+                    💻
+                </div>
+
+
+                <div class="item-details">
+
+                    <div class="item-title-row">
+
+                        <h3>
+                            HP Laptop
+                        </h3>
+
+                        <span class="status lost">
+                            LOST
+                        </span>
+
+                    </div>
+
+                    <p>
+                        💻 Electronics
+                    </p>
+
+                    <p>
+                        📍 Central Library
+                    </p>
+
+                    <p>
+                        📅 02 September 2026
+                    </p>
+
+                </div>
+
+
+                <div class="item-actions">
+
+                    <button
+                        class="view-action"
+                        onclick="viewMyItem('HP Laptop')">
+
+                        View
+
+                    </button>
+
+                    <button
+                        class="edit-action"
+                        onclick="editItem('HP Laptop')">
+
+                        Edit
+
+                    </button>
+
+                    <button
+                        class="delete-action"
+                        onclick="deleteItem(this)">
+
+                        Delete
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ITEM 2 -->
+
+            <div class="my-item-card"
+                data-status="found">
+
+                <div class="item-icon purple">
+                    🪪
+                </div>
+
+
+                <div class="item-details">
+
+                    <div class="item-title-row">
+
+                        <h3>
+                            College ID Card
+                        </h3>
+
+                        <span class="status found">
+                            FOUND
+                        </span>
+
+                    </div>
+
+                    <p>
+                        🪪 Documents
+                    </p>
+
+                    <p>
+                        📍 College Canteen
+                    </p>
+
+                    <p>
+                        📅 01 September 2026
+                    </p>
+
+                </div>
+
+
+                <div class="item-actions">
+
+                    <button
+                        class="view-action"
+                        onclick="viewMyItem('College ID Card')">
+
+                        View
+
+                    </button>
+
+                    <button
+                        class="edit-action"
+                        onclick="editItem('College ID Card')">
+
+                        Edit
+
+                    </button>
+
+                    <button
+                        class="delete-action"
+                        onclick="deleteItem(this)">
+
+                        Delete
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ITEM 3 -->
+
+            <div class="my-item-card"
+                data-status="lost">
+
+                <div class="item-icon pink">
+                    🎧
+                </div>
+
+
+                <div class="item-details">
+
+                    <div class="item-title-row">
+
+                        <h3>
+                            Wireless Headphones
+                        </h3>
+
+                        <span class="status lost">
+                            LOST
+                        </span>
+
+                    </div>
+
+                    <p>
+                        🎧 Accessories
+                    </p>
+
+                    <p>
+                        📍 Classroom 204
+                    </p>
+
+                    <p>
+                        📅 30 August 2026
+                    </p>
+
+                </div>
+
+
+                <div class="item-actions">
+
+                    <button
+                        class="view-action"
+                        onclick="viewMyItem('Wireless Headphones')">
+
+                        View
+
+                    </button>
+
+                    <button
+                        class="edit-action"
+                        onclick="editItem('Wireless Headphones')">
+
+                        Edit
+
+                    </button>
+
+                    <button
+                        class="delete-action"
+                        onclick="deleteItem(this)">
+
+                        Delete
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ITEM 4 -->
+
+            <div class="my-item-card"
+                data-status="returned">
+
+                <div class="item-icon green">
+                    🔑
+                </div>
+
+
+                <div class="item-details">
+
+                    <div class="item-title-row">
+
+                        <h3>
+                            Bike Keys
+                        </h3>
+
+                        <span class="status returned">
+                            RETURNED
+                        </span>
+
+                    </div>
+
+                    <p>
+                        🔑 Others
+                    </p>
+
+                    <p>
+                        📍 Parking Area
+                    </p>
+
+                    <p>
+                        📅 28 August 2026
+                    </p>
+
+                </div>
+
+
+                <div class="item-actions">
+
+                    <button
+                        class="view-action"
+                        onclick="viewMyItem('Bike Keys')">
+
+                        View
+
+                    </button>
+
+                    <button
+                        class="delete-action"
+                        onclick="deleteItem(this)">
+
+                        Delete
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= EMPTY STATE ================= -->
+
+        <div class="empty-state" id="emptyState">
+
+            <div>
+                📦
+            </div>
+
+            <h3>
+                No Items Found
+            </h3>
+
+            <p>
+                You haven't reported any items in this category.
+            </p>
+
+            <a href="report.html" class="primary-btn">
+                Report an Item
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🔎 Lost<span>&</span>Found
+        </div>
+
+        <p>
+            © 2026 Lost & Found Management System
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
+```
